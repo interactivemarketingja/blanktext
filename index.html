@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FortiWeb Enterprise Security</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Enterprise Security Application</p>
+        <h1>FortiWeb Command Center</h1>
+      </div>
+      <button id="runQuickAudit">Run Quick Audit</button>
+    </header>
+
+    <main class="layout">
+      <section class="card scanner">
+        <h2>Website Security Scanner</h2>
+        <p>Analyze production websites for critical risks and compliance gaps.</p>
+        <form id="scanForm">
+          <label for="targetUrl">Target URL</label>
+          <input id="targetUrl" type="url" required placeholder="https://example.com" />
+
+          <div class="checks">
+            <label><input type="checkbox" value="tls" checked /> TLS/SSL</label>
+            <label><input type="checkbox" value="headers" checked /> Security Headers</label>
+            <label><input type="checkbox" value="vuln" checked /> Vulnerabilities</label>
+            <label><input type="checkbox" value="compliance" checked /> Compliance</label>
+          </div>
+
+          <button type="submit">Start Deep Scan</button>
+        </form>
+      </section>
+
+      <section class="card score">
+        <h2>Security Posture</h2>
+        <div class="score-ring" id="scoreRing" aria-live="polite">
+          <span id="scoreValue">--</span>
+        </div>
+        <ul id="scanSummary"></ul>
+      </section>
+
+      <section class="card findings">
+        <h2>Live Findings</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Severity</th>
+              <th>Issue</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="findingsBody">
+            <tr>
+              <td colspan="3" class="placeholder">Run a scan to populate findings.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card timeline">
+        <h2>Incident Timeline</h2>
+        <ol id="timelineList">
+          <li>08:20 UTC — WAF signatures updated.</li>
+          <li>09:05 UTC — Suspicious request burst blocked from 3 IPs.</li>
+          <li>09:27 UTC — SOC analyst acknowledged medium-risk header mismatch.</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
