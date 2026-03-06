@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YardLink Jamaica</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="flag">🇯🇲</span>
+        <h1>YardLink</h1>
+      </div>
+      <p class="tagline">Connect Jamaica — parish to parish, yard to yard.</p>
+    </header>
+
+    <main class="layout">
+      <aside class="card sidebar">
+        <h2>Communities</h2>
+        <ul id="communities"></ul>
+        <h3>Trending in Jamaica</h3>
+        <ul id="trending"></ul>
+      </aside>
+
+      <section class="card composer">
+        <h2>Create Post</h2>
+        <form id="post-form">
+          <label>
+            Name
+            <input id="author" placeholder="Your name" required />
+          </label>
+          <label>
+            Parish
+            <select id="parish" required>
+              <option value="">Select parish</option>
+            </select>
+          </label>
+          <label>
+            What a gwaan?
+            <textarea id="content" rows="4" maxlength="240" placeholder="Share updates, events, and vibes..." required></textarea>
+          </label>
+          <button type="submit">Post</button>
+        </form>
+      </section>
+
+      <section class="feed">
+        <h2>Community Feed</h2>
+        <div id="feed"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built for Jamaica's local voices, events, and culture.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
